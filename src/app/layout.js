@@ -16,8 +16,10 @@ const nunito = Nunito({
 })
 
 export default function RootLayout({ children }) {
+
+
   return (
-    <html lang="en">
+    <html lang="en" className={nunito.className}>
       <head>
         <Script
           type="module"
@@ -53,7 +55,7 @@ export default function RootLayout({ children }) {
           `}
         </Script>
       </head>
-      <body className={`${nunito.className} bg-VeryLightGrayBg dark:bg-VeryDarkBlueBg transition-all duration-300`}>
+      <body className={` bg-VeryLightGrayBg dark:bg-VeryDarkBlueBg transition-all duration-300`}>
         <Header />
         {children}
       </body>
