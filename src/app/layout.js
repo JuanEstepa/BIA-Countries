@@ -1,6 +1,8 @@
 import './globals.css'
 import {Nunito} from 'next/font/google'
 import Script from 'next/script'
+import Header from "@/components/Header/page";
+
 
 export const metadata = {
   title: 'Country Information App',
@@ -25,8 +27,36 @@ export default function RootLayout({ children }) {
           noModule
           src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
         />
+        <Script id="theme-switcher-script" strategy="beforeInteractive">
+          {`
+            (function() {
+              const getThemePreference = () => {
+                // Si ya hay un tema guardado en localStorage, usarlo
+                if (typeof localStorage !== 'undefined') {
+                  const savedTheme = localStorage.getItem('theme');
+                  if (savedTheme === 'dark' || savedTheme === 'light') {
+                    return savedTheme;
+                  }
+                }
+                // Si no hay tema guardado, detectar la preferencia del sistema
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+              };
+
+              const currentTheme = getThemePreference();
+
+              if (currentTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+              } else {
+                document.documentElement.classList.remove('dark');
+              }
+            })();
+          `}
+        </Script>
       </head>
-      <body className={`${nunito.className} bg-VeryLightGrayBg`}>{children}</body>
+      <body className={`${nunito.className} bg-VeryLightGrayBg dark:bg-VeryDarkBlueBg transition-all duration-300`}>
+        <Header />
+        {children}
+      </body>
     </html>
   )
 }

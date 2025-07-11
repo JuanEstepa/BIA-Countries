@@ -9,3 +9,5 @@
   --color-VeryLightGrayBg: hsl(0, 0%, 98%);
   --color-White: hsl(0, 0%, 100%);
 }
+
+@custom-variant dark (&:where(.dark, .dark *));
