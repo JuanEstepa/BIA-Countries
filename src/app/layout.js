@@ -33,14 +33,12 @@ export default function RootLayout({ children }) {
           {`
             (function() {
               const getThemePreference = () => {
-                // Si ya hay un tema guardado en localStorage, usarlo
                 if (typeof localStorage !== 'undefined') {
                   const savedTheme = localStorage.getItem('theme');
                   if (savedTheme === 'dark' || savedTheme === 'light') {
                     return savedTheme;
                   }
                 }
-                // Si no hay tema guardado, detectar la preferencia del sistema
                 return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
               };
 
