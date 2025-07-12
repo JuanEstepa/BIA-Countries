@@ -4,12 +4,12 @@ Este es un proyecto [Next.js] desarrollado como parte de una prueba técnica par
 
 ## Características Implementadas
 
-- **Listado de Países:** Muestra una lista de todos los países obtenidos de la API[cite: 4].
-- **Buscador Funcional:** Permite buscar países por su nombre común[cite: 9].
-- **Filtro por Región:** Incluye un menú desplegable para filtrar países por continente (África, América, Asia, Europa, Oceanía y Todos)[cite: 9].
-- **Vista de Detalle del País:** Al hacer clic en la bandera de un país, se navega a una página de detalle con información más exhaustiva sobre ese país, incluyendo sus países fronterizos (si aplica)[cite: 11, 12, 13, 14].
-- **Diseño Responsivo:** Adaptado para una visualización óptima en diferentes tamaños de pantalla, incluyendo dispositivos móviles y de escritorio (1440px)[cite: 10].
-- **Modo Claro/Oscuro:** Implementa un selector de tema para alternar entre el modo claro y el modo oscuro, persistiendo la preferencia del usuario[cite: 15].
+- **Listado de Países:** Muestra una lista de todos los países obtenidos de la API.
+- **Buscador Funcional:** Permite buscar países por su nombre común.
+- **Filtro por Región:** Incluye un menú desplegable para filtrar países por continente (África, América, Asia, Europa, Oceanía y Todos).
+- **Vista de Detalle del País:** Al hacer clic en la bandera de un país, se navega a una página de detalle con información más exhaustiva sobre ese país, incluyendo sus países fronterizos (si aplica).
+- **Diseño Responsivo:** Adaptado para una visualización óptima en diferentes tamaños de pantalla, incluyendo dispositivos móviles y de escritorio (1440px).
+- **Modo Claro/Oscuro:** Implementa un selector de tema para alternar entre el modo claro y el modo oscuro, persistiendo la preferencia del usuario.
 
 ## Arquitectura y Solución Técnica
 
@@ -22,7 +22,7 @@ Este proyecto está construido con:
 - **Consumo de API:** Se utiliza `fetch` nativo para realizar las peticiones HTTP a la API de REST Countries (`https://restcountries.com`). Se gestionan tanto la obtención inicial de todos los países como la obtención de detalles de un país específico por su código.
 - **Lazy Loading de Componentes:** El componente `CountryCard` se carga dinámicamente (`next/dynamic`) para optimizar el rendimiento y mostrar un estado de carga mientras se renderizan.
 - **Gestión del Tema:** El modo oscuro se maneja aplicando la clase `dark` al elemento `<html>` del documento. La preferencia se persiste en `localStorage` y se aplica tempranamente en el `RootLayout` mediante un script para evitar el "parpadeo" del tema.
-- [cite_start]**Tipografía e Íconos:** Se utiliza la fuente **Nunito Sans** con los pesos especificados (300, 600, 800) y los íconos se implementan mediante **Ionicons**.
+- **Tipografía e Íconos:** Se utiliza la fuente **Nunito Sans** con los pesos especificados (300, 600, 800) y los íconos se implementan mediante **Ionicons**.
 
 ## Cómo Empezar
 
